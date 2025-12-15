@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI, BMR & Calorie Calculator</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="min-h-screen flex items-center justify-center text-white relative"
+  >
+    <!-- Background -->
+    <div
+      class="fixed inset-0 bg-cover bg-center blur-lg brightness-50 -z-10"
+      style="background-image: url('/asset/img/calculetor.jpg')"
+    ></div>
+
+    <!-- Wrapper -->
+    <div class="flex flex-wrap gap-6 max-w-6xl p-6">
+      <!-- DESCRIPTION -->
+      <div class="bg-black/40 p-6 rounded-2xl shadow-xl max-w-xl">
+        <h1 class="text-2xl font-semibold mb-2">What is BMI?</h1>
+        <p class="text-gray-200 mb-4">
+          Body Mass Index (BMI) estimates body fat based on weight and height.
+        </p>
+
+        <ul class="list-disc ml-5 mb-6 text-gray-300">
+          <li><b>Underweight:</b> Below 18.5</li>
+          <li><b>Normal weight:</b> 18.5 – 24.9</li>
+          <li><b>Overweight:</b> 25.0 – 29.9</li>
+        </ul>
+
+        <h1 class="text-2xl font-semibold mb-2">What is BMR?</h1>
+        <p class="text-gray-200 mb-4">
+          BMR is the number of calories your body needs at rest to maintain
+          vital functions.
+        </p>
+
+        <ul class="list-disc ml-5 text-gray-300">
+          <li>Affected by age, gender, height, and weight</li>
+          <li>Men usually have higher BMR</li>
+          <li>BMR decreases with age</li>
+          <li>Helps plan calorie intake</li>
+        </ul>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="bg-black/30 p-8 rounded-2xl shadow-2xl w-full max-w-md">
+        <h2 class="text-2xl font-semibold text-center mb-6">
+          BMI & BMR Calculator
+        </h2>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block mb-1">Weight (kg)</label>
+            <input
+              id="weight"
+              type="number"
+              class="w-full p-2 rounded-lg text-black"
+            />
+          </div>
+
+          <div>
+            <label class="block mb-1">Height (feet)</label>
+            <input
+              id="heightFeet"
+              type="number"
+              class="w-full p-2 rounded-lg text-black"
+            />
+          </div>
+
+          <div>
+            <label class="block mb-1">Height (inches)</label>
+            <input
+              id="heightInches"
+              type="number"
+              class="w-full p-2 rounded-lg text-black"
+            />
+          </div>
+
+          <div>
+            <label class="block mb-1">Age</label>
+            <input
+              id="age"
+              type="number"
+              class="w-full p-2 rounded-lg text-black"
+            />
+          </div>
+
+          <div>
+            <label class="block mb-1">Gender</label>
+            <select id="gender" class="w-full p-2 rounded-lg text-black">
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block mb-1">BMI</label>
+            <input id="bmi" readonly class="w-full p-2 rounded-lg text-black" />
+            <div
+              id="bmiDesc"
+              class="mt-2 bg-gray-100 text-black p-2 rounded-lg"
+            ></div>
+          </div>
+
+          <div>
+            <label class="block mb-1">BMR</label>
+            <input id="bmr" readonly class="w-full p-2 rounded-lg text-black" />
+          </div>
+
+          <button
+            onclick="calculate()"
+            class="w-full bg-green-600 hover:bg-green-800 transition p-3 rounded-lg text-lg font-semibold"
+          >
+            Calculate
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

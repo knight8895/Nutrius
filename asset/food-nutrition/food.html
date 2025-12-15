@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Food Cards CSS Only</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+
+
+body{
+    
+    min-height: 100vh;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* FLEX CARDS */
+section{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    width:260px;
+    background:#ffffff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    text-decoration:none;
+    color:#000;
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.card .info{
+    padding:15px;
+}
+
+/* POPUP */
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding: 20px; 
+}
+
+.popup:target{
+    display:flex;
+    
+}
+
+.popup-box{
+
+    background:#c7fce3;
+    width:90%;
+    max-width:400px;
+    border-radius: 20px;
+    overflow:hidden;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding-left: 30px;
+    line-height: 1.5;
+    
+}
+.popup-box::-webkit-scrollbar {
+    width: 8px;              /* width of the scrollbar */
+}
+
+.popup-box img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.popup-content{
+    padding:15px;
+}
+
+.close{
+    display: flex;
+    justify-content: end;
+    
+    padding:10px;
+    font-size:18px;
+}
+.bg {
+    position: fixed;  
+  
+    width: 100%;               /* cover full width */
+    height: 100%;              /* cover full height */
+    background: url('/asset/img/756bbcec62aa06f7938e3a0f58044596.png') center / cover no-repeat;
+    z-index: -1;               /* behind everything else */
+    filter: blur(15px);        /* optional blur */
+}
+
+</style>
+</head>
+
+<body>
+    <div class="bg"></div>
+
+<h1>Food Nutrition Cards</h1>
+
+<section>
+
+<a href="#apple" class="card">
+    <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+    <div class="info">
+        <h2>Apple</h2>
+        <ul>
+            <li><b>Macronutrients:</b></li>
+            <br>
+            <li>Calories: ~89 kcal  </li>
+            <li> Carbohydrates: ~22.8 g  </li>
+            <li>Sugars: ~12.2 g  </li>
+        </ul>
+    </div>
+</a>
+
+<a href="#banana" class="card">
+    <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e43e">
+    <div class="info">
+        <h2>Banana</h2>
+        <ul><li>Energy</li><li>Recovery</li></ul>
+    </div>
+</a>
+
+</section>
+
+<!-- POPUPS -->
+<div id="banana" class="popup">
+    <div class="popup-box">
+        <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e7a3" alt="Banana">
+        <div class="popup-content">
+            <h2>Banana</h2>
+
+            <b>Macronutrients (per 100g)</b>
+            <ul>
+                <li>Calories: ~89 kcal</li>
+                <li>Carbohydrates: ~22.8 g
+                    <ul>
+                        <li>Sugars: ~12.2 g</li>
+                        <li>Dietary Fiber: ~2.6 g</li>
+                    </ul>
+                </li>
+                <li>Protein: ~1.1 g</li>
+                <li>Fat: ~0.3 g</li>
+                <li>Water content: ~75%</li>
+            </ul>
+
+            <b>Key Vitamins</b>
+            <ul>
+                <li>Vitamin B6 (Pyridoxine) – Supports brain health & metabolism</li>
+                <li>Vitamin C – Antioxidant, boosts immunity</li>
+                <li>Folate (B9) – Important for red blood cell formation</li>
+                <li>Vitamin A (small amounts) – Eye health</li>
+            </ul>
+
+            <b>Key Minerals</b>
+            <ul>
+                <li>Potassium (~358 mg) – Regulates blood pressure, supports heart function</li>
+                <li>Magnesium – Helps muscle & nerve function</li>
+                <li>Manganese – Bone health & metabolism</li>
+                <li>Iron (small amount) – Red blood cell production</li>
+            </ul>
+
+            <b>Health Benefits</b>
+            <ul>
+                <li>Cardiovascular Health – High potassium helps lower blood pressure and reduce heart disease risk</li>
+                <li>Digestive Health – Resistant starch & fiber aid gut health and prevent constipation</li>
+                <li>Energy Boost – Natural sugars + carbs = quick energy source; great for pre/post workout</li>
+                <li>Mood & Brain Support – B6 and tryptophan (converted to serotonin) may improve mood and reduce depression symptoms</li>
+            </ul>
+
+            <b>Effects on Body Systems</b>
+            <ul>
+                <li>Nervous System – B6 supports neurotransmitter function</li>
+                <li>Muscles – Potassium prevents cramps and aids recovery</li>
+                <li>Immune System – Vitamin C enhances defense</li>
+                <li>Digestive System – Fiber promotes regular bowel movement</li>
+            </ul>
+
+            <b>Potential Risks</b>
+            <ul>
+                <li>High sugar – Overconsumption can raise blood sugar, especially in diabetics</li>
+                <li>Latex allergy – Cross-reactivity in sensitive people</li>
+                <li>Migraines – Tyramine in overripe bananas may trigger migraines</li>
+            </ul>
+
+            <b>Role in Injury Recovery</b>
+            <ul>
+                <li>Potassium & magnesium help muscle recovery</li>
+                <li>Vitamin C supports collagen formation (wound healing)</li>
+                <li>B6 helps reduce inflammation and supports metabolism</li>
+                <li>Energy-dense – Helps maintain strength and appetite during recovery</li>
+            </ul>
+
+            <a href="#" class="close">✖ Close</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="banana" class="popup">
+    <div class="popup-box">
+        <img src="https://images.unsplash.com/photo-1574226516831-e1dff420e43e">
+        <div class="popup-content">
+            <h2>Banana</h2>
+            <b>Nutrition</b>
+            <ul><li>Carbs</li><li>Vitamin B6</li></ul>
+            <b>Benefits</b>
+            <ul><li>Energy</li><li>Muscle recovery</li></ul>
+            <a href="#" class="close">✖ Close</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
